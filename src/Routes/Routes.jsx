@@ -16,6 +16,7 @@ import Speciality from "../Components/Categoties/Speciality";
 import Luxury from "../Components/Categoties/Luxury";
 import GovtAndPublic from "../Components/Categoties/GovtAndPublic";
 import Hospitality from "../Components/Categoties/Hospitality";
+import About from "../Components/About/About";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: "/about",
+                element: <About></About>,
             },
             {
                 path: "/residential",

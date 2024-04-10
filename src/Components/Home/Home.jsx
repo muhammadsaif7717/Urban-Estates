@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Slider from "../Slider/Slider";
 import Estates from "../Estates/Estates";
 import SideBar from "../SideBar/SideBar";
+import 'animate.css';
 
 const Home = () => {
     return (
@@ -22,7 +23,7 @@ const Home = () => {
                     </div>
                     <div>
                         <div className="">
-                            <h1 className="text-3xl font-bold text-center">Estates</h1>
+                            <h1 className="text-3xl font-bold text-center animate__animated animate__backInRight">Estates</h1>
                         </div>
                         <Estates></Estates>
                     </div>

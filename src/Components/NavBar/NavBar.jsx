@@ -26,6 +26,7 @@ const NavBar = () => {
                         </div>
                         <nav tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink className="px-5" to="/">Home</NavLink>
+                            <NavLink className="px-5" to="/about">About</NavLink>
                             <NavLink className="px-5" to="/update-profile">Update Profile</NavLink>
                             <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
                         </nav>
@@ -35,6 +36,7 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <nav className="menu menu-horizontal px-1">
                         <NavLink className="px-5" to="/">Home</NavLink>
+                        <NavLink className="px-5" to="/about">About</NavLink>
                         <NavLink className="px-5" to="/update-profile">Update Profile</NavLink>
                         <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
                     </nav>
