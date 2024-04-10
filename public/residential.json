@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Spacious Family Home",
+        "segment_name": "Single-family home",
+        "description": "Detached house designed for one family.",
+        "price": "$500,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "Suburban neighborhood",
+        "facilities": ["4 bedrooms", "3 bathrooms", "Backyard garden"],
+        "image": "https://example.com/single-family-home.jpg"
+    },
+    {
+        "id": 2,
+        "estate_title": "Cozy Townhouse",
+        "segment_name": "Townhouse",
+        "description": "Multi-level attached homes with shared walls.",
+        "price": "$300,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Urban area",
+        "facilities": ["2 bedrooms", "2.5 bathrooms", "Garage"],
+        "image": "https://example.com/townhouse.jpg"
+    },
+    {
+        "id": 3,
+        "estate_title": "Modern Apartment",
+        "segment_name": "Apartment",
+        "description": "Multi-unit building with individual units for rent.",
+        "price": "$1,500/month",
+        "status": "rent",
+        "area": "1000 sq ft",
+        "location": "Downtown area",
+        "facilities": ["Open floor plan", "Balcony", "Fitness center"],
+        "image": "https://example.com/apartment.jpg"
+    },
+    {
+        "id": 4,
+        "estate_title": "Student Housing Complex",
+        "segment_name": "Student housing",
+        "description": "Housing specifically designed for students.",
+        "price": "$800/month per room",
+        "status": "rent",
+        "area": "Shared living space",
+        "location": "Near university campus",
+        "facilities": ["Furnished rooms", "Study areas", "Laundry facilities"],
+        "image": "https://example.com/student-housing.jpg"
+    },
+    {
+        "id": 5,
+        "estate_title": "Retirement Community Residence",
+        "segment_name": "Senior living community",
+        "description": "Residential community for older adults with tailored amenities.",
+        "price": "$200,000",
+        "status": "sale",
+        "area": "1200 sq ft",
+        "location": "Retirement village",
+        "facilities": ["Assisted living services", "Recreational activities", "Gated community"],
+        "image": "https://example.com/senior-living-community.jpg"
+    },
+    {
+        "id": 6,
+        "estate_title": "Beachfront Vacation Rental",
+        "segment_name": "Vacation rental",
+        "description": "Temporary accommodation for vacationers.",
+        "price": "$250/night",
+        "status": "rent",
+        "area": "Beachfront property",
+        "location": "Coastal area",
+        "facilities": ["Ocean view", "Private pool", "Outdoor patio"],
+        "image": "https://example.com/vacation-rental.jpg"
+    },
+    {
+        "id": 7,
+        "estate_title": "Luxury Penthouse",
+        "segment_name": "Apartment",
+        "description": "Exclusive high-rise apartment with breathtaking views.",
+        "price": "$2,000,000",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "City center",
+        "facilities": ["Floor-to-ceiling windows", "Private elevator", "Concierge service"],
+        "image": "https://example.com/luxury-penthouse.jpg"
+    },
+    {
+        "id": 8,
+        "estate_title": "Lakefront Cottage",
+        "segment_name": "Vacation rental",
+        "description": "Quaint cottage nestled by the lake.",
+        "price": "$300/night",
+        "status": "rent",
+        "area": "1000 sq ft",
+        "location": "Rural lakeside",
+        "facilities": ["Deck overlooking lake", "Fire pit", "Canoe available"],
+        "image": "https://example.com/lakefront-cottage.jpg"
+    },
+    {
+        "id": 9,
+        "estate_title": "Urban Loft",
+        "segment_name": "Apartment",
+        "description": "Industrial-chic loft in a converted warehouse.",
+        "price": "$1,200/month",
+        "status": "rent",
+        "area": "800 sq ft",
+        "location": "Warehouse district",
+        "facilities": ["Exposed brick walls", "High ceilings", "Urban views"],
+        "image": "https://example.com/urban-loft.jpg"
+    }
+]
