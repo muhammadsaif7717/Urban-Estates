@@ -17,6 +17,7 @@ import Luxury from "../Components/Categoties/Luxury";
 import GovtAndPublic from "../Components/Categoties/GovtAndPublic";
 import Hospitality from "../Components/Categoties/Hospitality";
 import About from "../Components/About/About";
+import Estates from "../Components/Estates/Estates";
 
 
 const router = createBrowserRouter([
@@ -28,47 +29,53 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+                children: [
+                    {
+                        path: "/",
+                        element: <Estates></Estates>,
+                    },
+                    {
+                        path: "/residential",
+                        element: <Residential></Residential>,
+                    },
+                    {
+                        path: "/commercial",
+                        element: <Commercial></Commercial>,
+                    },
+                    {
+                        path: "/land",
+                        element: <Land></Land>,
+                    },
+                    {
+                        path: "/industrial",
+                        element: <Industrial></Industrial>,
+                    },
+                    {
+                        path: "/speciality",
+                        element: <Speciality></Speciality>,
+                    },
+                    {
+                        path: "/luxury",
+                        element: <Luxury></Luxury>,
+                    },
+                    {
+                        path: "/govt-and-public",
+                        element: <GovtAndPublic></GovtAndPublic>,
+                    },
+                    {
+                        path: "/hospitality",
+                        element: <Hospitality></Hospitality>,
+                    },
+                ]
             },
             {
-                path: "/about",
+                path: "/About",
                 element: <About></About>,
-            },
-            {
-                path: "/residential",
-                element: <Residential></Residential>,
-            },
-            {
-                path: "/commercial",
-                element: <Commercial></Commercial>,
-            },
-            {
-                path: "/land",
-                element: <Land></Land>,
-            },
-            {
-                path: "/industrial",
-                element: <Industrial></Industrial>,
-            },
-            {
-                path: "/speciality",
-                element: <Speciality></Speciality>,
-            },
-            {
-                path: "/luxury",
-                element: <Luxury></Luxury>,
-            },
-            {
-                path: "/govt-and-public",
-                element: <GovtAndPublic></GovtAndPublic>,
-            },
-            {
-                path: "/hospitality",
-                element: <Hospitality></Hospitality>,
             },
             {
                 path: "/details/:id",
                 element: <Details></Details>,
-                loader: ()=> fetch('estates.json')
+                loader: () => fetch('estates.json')
             },
             {
                 path: "/update-profile",

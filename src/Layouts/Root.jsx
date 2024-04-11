@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 const Root = () => {
     return (
         <>
-            <div className="w-[95%] md:w-[80%] mx-auto font-poppins">
+            <div className="w-[95%] md:w-[85%] lg:w-[80%] mx-auto font-poppins">
                 <div className="my-5">
                 <NavBar></NavBar>
                 </div>

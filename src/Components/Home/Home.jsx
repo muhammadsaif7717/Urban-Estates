@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Slider from "../Slider/Slider";
-import Estates from "../Estates/Estates";
+import { Outlet } from 'react-router-dom'
 import SideBar from "../SideBar/SideBar";
 import 'animate.css';
 
@@ -17,15 +17,13 @@ const Home = () => {
                     <Slider></Slider>
                 </div>
 
-                <div className="flex mt-10 gap-5 md:gap-10 flex-col md:flex-row">
-                    <div className="flex-1">
+                <div className="flex flex-col">
+                    <div>
                         <SideBar></SideBar>
                     </div>
                     <div>
-                        <div className="">
-                            <h1 className="text-3xl font-bold text-center animate__animated animate__backInRight">Estates</h1>
-                        </div>
-                        <Estates></Estates>
+                       <Outlet></Outlet>
+                        
                     </div>
                 </div>
             </div>
