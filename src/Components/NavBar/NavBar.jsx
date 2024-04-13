@@ -24,17 +24,17 @@ const NavBar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden pl-0">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <nav tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <nav tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2  bg-base-100 rounded-box w-52 text-lg z-30 shadow-2xl border-2">
                             <NavLink className="px-5" to="/">Home</NavLink>
                             <NavLink className="px-5" to="/about">About</NavLink>
                             <NavLink className="px-5" to="/update-profile">Update Profile</NavLink>
                             <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
                         </nav>
                     </div>
-                    <a className="btn btn-ghost text-xl font-bold p-0">Urban Estates</a>
+                    <a className="btn btn-ghost text-2xl font-bold p-0">Urban Estates</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <nav className="menu menu-horizontal px-1">
+                    <nav className="menu menu-horizontal px-1 text-lg">
                         <NavLink className="px-5" to="/">Home</NavLink>
                         <NavLink className="px-5" to="/about">About</NavLink>
 

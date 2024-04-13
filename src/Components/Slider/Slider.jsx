@@ -9,7 +9,7 @@ import 'swiper/css/scrollbar';
 
 const Slider = () => {
     return (
-        <div className='h-[25vh] md:h-[35vh] lg:h-[60vh] relative flex justify-center items-center'>
+        <div className='h-[30vh] md:h-[45vh] lg:h-[70vh] relative flex justify-center items-center'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
                 effect='fade'
@@ -19,29 +19,29 @@ const Slider = () => {
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                className='z-10'
+                className='z-[1]'
             >
 
 
                 <SwiperSlide>
-                    <img src="https://i.postimg.cc/jjnsdbTY/brandon-griggs-w-R11-KBa-B86-U-unsplash.jpg" className="w-full brightness-75 rounded-xl h-[25vh] md:h-[35vh] lg:h-[60vh]" />
+                    <img src="https://i.postimg.cc/jjnsdbTY/brandon-griggs-w-R11-KBa-B86-U-unsplash.jpg" className="w-full brightness-50 rounded-xl h-[30vh] md:h-[45vh] lg:h-[70vh]" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="https://i.postimg.cc/nznwS40S/youssef-abdelwahab-qyzo7-TDSVQs-unsplash.jpg" className="w-full brightness-75 rounded-xl h-[25vh] md:h-[35vh] lg:h-[60vh]" />
+                    <img src="https://i.postimg.cc/yYm44ZMM/ahmed-almakhzanji-b-XY9-i4-ESx-A-unsplash.jpg" className="w-full brightness-50 rounded-xl h-[30vh] md:h-[45vh] lg:h-[70vh]" />
 
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="https://i.postimg.cc/dt1431bZ/todd-kent-178j8t-Jr-Nlc-unsplash.jpg" className="w-full brightness-75 rounded-xl h-[25vh] md:h-[35vh] lg:h-[60vh]" />
+                    <img src="https://i.postimg.cc/dt1431bZ/todd-kent-178j8t-Jr-Nlc-unsplash.jpg" className="w-full brightness-50 rounded-xl h-[30vh] md:h-[45vh] lg:h-[70vh]" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="https://i.postimg.cc/jqHS7t7s/alberto-castillo-q-mx4m-Sk-K9zeo-unsplash.jpg" className="w-full brightness-75 rounded-xl h-[25vh] md:h-[35vh] lg:h-[60vh]" />
+                    <img src="https://i.postimg.cc/jqHS7t7s/alberto-castillo-q-mx4m-Sk-K9zeo-unsplash.jpg" className="w-full brightness-50 rounded-xl h-[30vh] md:h-[45vh] lg:h-[70vh]" />
                 </SwiperSlide>
 
             </Swiper>
-            <div className='z-20 absolute space-y-5 py-5 px-0 md:py-10
-            md:px-3 lg:p-10  bg-white bg-opacity-50 rounded-xl text-center'>
-                <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-[#4f56bb] ">Welcome to Urban Estates</h1>
-                <p className='text-sm lg:text-lg'>Elevating Your Real Estate Journey with Premium Properties and Personalized Service.</p>
+            <div className='z-[2] absolute space-y-5 py-5 px-0 md:py-10
+            md:px-0 lg:py-20   bg-white bg-opacity-80 rounded-xl text-center w-[80%]'>
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-blue-600 ">Welcome to Urban Estates</h1>
+                <p className='text-sm md:text-[15px] lg:text-xl  w-2/3 mx-auto'>Elevating Your Real Estate Journey with Premium Properties and Personalized Service.</p>
             </div>
         </div>
     );
