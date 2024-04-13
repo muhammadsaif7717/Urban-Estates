@@ -31,7 +31,7 @@ const NavBar = () => {
                             <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
                         </nav>
                     </div>
-                    <a className="btn btn-ghost text-2xl font-bold p-0">Urban Estates</a>
+                    <Link to="/" className="btn btn-ghost text-2xl font-bold p-0">Urban Estates</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <nav className="menu menu-horizontal px-1 text-lg">

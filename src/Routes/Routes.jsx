@@ -8,10 +8,10 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
 import UserProfile from "../Components/UserProfile/UserProfile";
 import Details from "../Components/Details/Details";
-import Residential from "../Components/CategotiesBar/Residential";
-import Commercial from "../Components/CategotiesBar/Commercial";
-import Land from "../Components/CategotiesBar/Land";
-import Industrial from "../Components/CategotiesBar/Industrial";
+import Residential from "../Components/Categoties/Residential";
+import Commercial from "../Components/Categoties/Commercial";
+import Land from "../Components/Categoties/Land";
+import Industrial from "../Components/Categoties/Industrial";
 import About from "../Components/About/About";
 import PrivetRoute from "./PrivetRoute";
 

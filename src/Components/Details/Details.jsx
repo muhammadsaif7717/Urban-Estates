@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useParams } from 'react-router-dom'
 import { IoLocationOutline } from "react-icons/io5";
 import { RiCoinsFill } from "react-icons/ri";
+import { Helmet } from 'react-helmet-async';
 
 const Details = () => {
     const resEstates = useLoaderData();
@@ -8,7 +9,11 @@ const Details = () => {
     const selectedResEstate = resEstates.find(resEstate => resEstate.id === parseInt(id))
     console.log(selectedResEstate)
     return (
-        <div className='flex flex-col lg:flex-row items-center md:items-start lg:items-center my-10'>
+    <div className='flex justify-center items-center lg:h-[80vh]'>
+            <div className='flex flex-col lg:flex-row items-center md:items-start lg:items-center mb-10'>
+            <Helmet>
+                <title>Urban Estates | Details - {id}</title>
+            </Helmet>
             <div className='flex-1'>
                 <img src={selectedResEstate.image} className=" h-auto w-full rounded-xl" />
             </div>
@@ -43,7 +48,7 @@ const Details = () => {
 
                     <div className='flex gap-5'>
                         <div>
-                        <h1 className='text-sm'><strong>Area:</strong> {selectedResEstate.area}</h1>
+                            <h1 className='text-sm'><strong>Area:</strong> {selectedResEstate.area}</h1>
                         </div>
                         <div className='flex items-center gap-2'>
                             <IoLocationOutline className='font-bold text-xl text-blue-600' />
@@ -51,7 +56,7 @@ const Details = () => {
                         </div>
                     </div>
                     <div>
-                        <Link to={`/details/${selectedResEstate.id}`}><button className='btn btn-ghost bg-orange-500 text-white hover:text-black'>View Property</button></Link>
+                        <Link><button className='btn btn-ghost bg-orange-500 text-white hover:text-black'>Buy Now</button></Link>
                     </div>
 
                 </div>
@@ -59,6 +64,7 @@ const Details = () => {
 
             </div>
         </div>
+    </div>
     );
 };
 

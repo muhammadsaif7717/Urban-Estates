@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 
 const About = () => {
@@ -5,8 +6,11 @@ const About = () => {
 
 
     return (
-        <div>
-            <div className="hero bg-gray-100 mt-12 md:p-2 my-14">
+        <div className="flex justify-center items-center h-auto md:h-[80vh] mb-10">
+            <Helmet>
+                <title>Urban Estates | About</title>
+            </Helmet>
+            <div className="hero bg-gray-100 md:p-2 rounded-xl">
                 <div className="hero-content text-center mt-12 mb-12">
                     <div className="">
                         <h1 className="text-3xl md:text-5xl font-bold">Hello People!</h1>

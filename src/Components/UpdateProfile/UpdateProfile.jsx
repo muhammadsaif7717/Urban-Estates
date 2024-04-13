@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
+import "./UpdateProfile.css"
+
 
 const UpdateProfile = () => {
     const { user, updateUserProfile, setRelaod } = useContext(AuthContext)
@@ -23,12 +26,13 @@ const UpdateProfile = () => {
     }
     return (
         <div>
-
-
+            <Helmet>
+                <title>Urban Estates | Update Profile</title>
+            </Helmet>
 
             <div className="block md:hidden">
-                <div className=" bg-[url('https://i.postimg.cc/cJ6b0zgK/francesca-tosolini-t-Hk-JAMc-O3-QE-unsplash-1.jpg')] bg-center bg-no-repeat bg-cover  flex justify-center items-center rounded-xl">
-                    <div className="bg-white w-full p-5 bg-opacity-70 rounded-xl ">
+                <div className=" bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')] bg-center bg-no-repeat bg-cover brightness-90  flex justify-center items-center rounded-xl">
+                    <div className="bg-white w-full p-5 bg-opacity-80 rounded-xl ">
                         <h1 className="text-center text-2xl font-bold mb-8">Update Your Profile</h1>
                         <form className="space-y-4">
                             <div className="block md:hidden space-y-2">
@@ -43,7 +47,7 @@ const UpdateProfile = () => {
                             </div>
                         </form>
 
-                        <form onSubmit={handleFormSubmit} className="card-body">
+                        <form onSubmit={handleFormSubmit} className="">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -79,8 +83,8 @@ const UpdateProfile = () => {
 
 
             <div className="hidden md:block">
-                <div className="  flex justify-center items-center rounded-xl my-10 border shadow-xl">
-                    <div className="bg-white w-full lg:w-[700px] p-10 bg-opacity-80 rounded-xl ">
+                <div className=" h-[80vh] container flex justify-center items-center rounded-2xl mb-10 border shadow-xl">
+                    <div className="bg-white w-full md:w-[600px] lg:w-[700px] p-10 bg-opacity-80 rounded-xl ">
                         <h1 className="text-center text-3xl font-bold mb-8">Update Your Profile</h1>
                         <form className="space-y-4">
                             <tr>
