@@ -8,18 +8,14 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return (
-            <div className="flex items-center justify-center min-hs">
-                <span className="loading loading-dots loading-lg"></span>
-            </div>
-        );
+        return <span className="loading loading-dots loading-lg"></span>;
     }
 
     if (user) {
         return children;
     }
 
-    return <Navigate state={{ from: location.pathname }} to='/sign-in' />;
+    return <Navigate state={ location.pathname} to='/sign-in' />;
 };
 
 PrivateRoute.propTypes = {
