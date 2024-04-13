@@ -6,9 +6,9 @@ const ErrorPage = () => {
             <div className="text-center space-y-3">
                 <h1 className="text-4xl font-bold">Oops!</h1>
                 <p>404 Page Not Found</p>
-                <button className="btn btn-ghost text-white bg-orange-500">
-                    <Link to="/">Back To Home</Link>
-                </button>
+
+                <Link to="/"><button className="btn btn-ghost text-white bg-orange-500">Back To Home</button></Link>
+
             </div>
         </div>
     );

@@ -7,7 +7,6 @@ import { FaGithub } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
@@ -34,8 +33,7 @@ const SignIn = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
-                e.target.reset();
-                toast.success('Login successful!');
+                e.target.reset();       
                 // navigate after login
                 navigate(location?.state ? location.state : '/')
             })
@@ -50,7 +48,6 @@ const SignIn = () => {
         sighInWithGoogle(googleProvider)
             .then(result => {
                 console.log(result.user)
-                toast.success('Login successful!');
                 // navigate after login
                 navigate(location?.state ? location.state : '/')
             })
@@ -65,7 +62,6 @@ const SignIn = () => {
         sighInWithGithub(githubProvider)
             .then(result => {
                 console.log(result.user)
-                toast.success('Login successful!');
                 // navigate after login
                 navigate(location?.state ? location.state : '/')
             })
@@ -74,6 +70,7 @@ const SignIn = () => {
             })
 
     }
+   
 
     return (
         <>
@@ -134,7 +131,7 @@ const SignIn = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer />
+            <ToastContainer></ToastContainer>
         </>
     );
 };

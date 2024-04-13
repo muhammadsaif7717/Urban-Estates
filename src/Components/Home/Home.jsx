@@ -3,8 +3,17 @@ import Slider from "../Slider/Slider";
 import { Outlet } from 'react-router-dom'
 import CategotiesBar from "../CategoriesBar/CategotiesBar";
 import 'animate.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
+
 
 const Home = () => {
+    const {user}=useContext(AuthContext)
+    if(user){
+        toast.success('Login successful!');
+    }
     return (
         <>
             <Helmet>
@@ -27,6 +36,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </>
     );
 };
