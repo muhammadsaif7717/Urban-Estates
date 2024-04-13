@@ -37,8 +37,10 @@ const NavBar = () => {
                     <nav className="menu menu-horizontal px-1">
                         <NavLink className="px-5" to="/">Home</NavLink>
                         <NavLink className="px-5" to="/about">About</NavLink>
+
                         <NavLink className="px-5" to="/update-profile">Update Profile</NavLink>
                         <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
+
                     </nav>
                 </div>
                 <div className="navbar-end flex gap-5 items-center">
@@ -53,11 +55,11 @@ const NavBar = () => {
                                 </div>
                                 :
                                 ''
-                                // <div role="button" className="btn btn-ghost btn-circle avatar">
-                                //     <div className="w-10 rounded-full">
-                                //         <img alt="Profile Picture" src="https://i.postimg.cc/wjnRRSJh/user.png" />
-                                //     </div>
-                                // </div>
+                            // <div role="button" className="btn btn-ghost btn-circle avatar">
+                            //     <div className="w-10 rounded-full">
+                            //         <img alt="Profile Picture" src="https://i.postimg.cc/wjnRRSJh/user.png" />
+                            //     </div>
+                            // </div>
                         }
                     </div>
 

@@ -2,13 +2,134 @@ import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const UpdateProfile = () => {
-    const {user}=useContext(AuthContext)
+    const { user, updateUserProfile, setRelaod } = useContext(AuthContext)
     console.log(user)
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+
+        console.log(name, photo)
+
+        //update parofile
+        updateUserProfile(name, photo)
+            .then(() => {
+                setRelaod(true)
+                e.target.reset();
+            })
+
+
+    }
     return (
         <div>
-            <h1>Update Profile</h1>
-            <h1>{user.displayName}</h1>
-            <h1>{user.email}</h1>
+
+
+
+            <div className="block md:hidden">
+                <div className=" bg-[url('https://i.postimg.cc/cJ6b0zgK/francesca-tosolini-t-Hk-JAMc-O3-QE-unsplash-1.jpg')] bg-center bg-no-repeat bg-cover  flex justify-center items-center rounded-xl">
+                    <div className="bg-white w-full p-5 bg-opacity-70 rounded-xl ">
+                        <h1 className="text-center text-2xl font-bold mb-8">Update Your Profile</h1>
+                        <form className="space-y-4">
+                            <div className="block md:hidden space-y-2">
+                                <div className="flex flex-col">
+                                    <label><strong>Name:</strong></label>
+                                    <h1>{user.displayName}</h1>
+                                </div>
+                                <div className="flex flex-col">
+                                    <label><strong>Email:</strong></label>
+                                    <h1>{user.email}</h1>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form onSubmit={handleFormSubmit} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    className="input input-bordered"
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="Photo URL here"
+                                    name="photo"
+                                    className="input input-bordered"
+                                />
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Update Profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div className="hidden md:block">
+                <div className="  flex justify-center items-center rounded-xl my-10 border shadow-xl">
+                    <div className="bg-white w-full lg:w-[700px] p-10 bg-opacity-80 rounded-xl ">
+                        <h1 className="text-center text-3xl font-bold mb-8">Update Your Profile</h1>
+                        <form className="space-y-4">
+                            <tr>
+                                <td><h1 className="text-lg"><strong>Name:</strong> &nbsp;</h1> </td>
+                                <td>{user.displayName}</td>
+                            </tr>
+                            <tr>
+                                <td><h1 className="text-lg"><strong>Email:</strong> &nbsp;</h1> </td>
+                                <td>{user.email}</td>
+                            </tr>
+                            <tr>
+                                <td><h1 className="text-lg"><strong>Photo URL:</strong> &nbsp;</h1> </td>
+                                <td>{user.photoURL}</td>
+                            </tr>
+                        </form>
+                        <br /> <br />
+                        <form onSubmit={handleFormSubmit} className="">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text"><strong>Name</strong></span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    className="input input-bordered"
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text"><strong>Photo URL</strong></span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="Photo URL here"
+                                    name="photo"
+                                    className="input input-bordered"
+                                />
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Update Profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     );
 };

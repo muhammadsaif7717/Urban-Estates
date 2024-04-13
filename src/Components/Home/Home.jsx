@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Slider from "../Slider/Slider";
 import { Outlet } from 'react-router-dom'
-import SideBar from "../SideBar/SideBar";
+import CategotiesBar from "../Categories/CategotiesBar";
 import 'animate.css';
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
 
                 <div className="flex flex-col">
                     <div>
-                        <SideBar></SideBar>
+                        <CategotiesBar></CategotiesBar>
                     </div>
                     <div>
                        <Outlet></Outlet>

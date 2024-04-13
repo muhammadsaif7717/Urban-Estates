@@ -8,16 +8,13 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import UpdateProfile from "../Components/UpdateProfile/UpdateProfile";
 import UserProfile from "../Components/UserProfile/UserProfile";
 import Details from "../Components/Details/Details";
-import Residential from "../Components/Categoties/Residential";
-import Commercial from "../Components/Categoties/Commercial";
-import Land from "../Components/Categoties/Land";
-import Industrial from "../Components/Categoties/Industrial";
-import Speciality from "../Components/Categoties/Speciality";
-import Luxury from "../Components/Categoties/Luxury";
-import GovtAndPublic from "../Components/Categoties/GovtAndPublic";
-import Hospitality from "../Components/Categoties/Hospitality";
+import Residential from "../Components/CategotiesBar/Residential";
+import Commercial from "../Components/CategotiesBar/Commercial";
+import Land from "../Components/CategotiesBar/Land";
+import Industrial from "../Components/CategotiesBar/Industrial";
 import About from "../Components/About/About";
-import Estates from "../Components/Estates/Estates";
+import PrivetRoute from "./PrivetRoute";
+
 
 
 const router = createBrowserRouter([
@@ -32,11 +29,8 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: "/",
-                        element: <Estates></Estates>,
-                    },
-                    {
-                        path: "/residential",
                         element: <Residential></Residential>,
+                        loader: ()=>fetch('/residential.json'),
                     },
                     {
                         path: "/commercial",
@@ -50,40 +44,24 @@ const router = createBrowserRouter([
                         path: "/industrial",
                         element: <Industrial></Industrial>,
                     },
-                    {
-                        path: "/speciality",
-                        element: <Speciality></Speciality>,
-                    },
-                    {
-                        path: "/luxury",
-                        element: <Luxury></Luxury>,
-                    },
-                    {
-                        path: "/govt-and-public",
-                        element: <GovtAndPublic></GovtAndPublic>,
-                    },
-                    {
-                        path: "/hospitality",
-                        element: <Hospitality></Hospitality>,
-                    },
                 ]
             },
             {
                 path: "/About",
-                element: <About></About>,
+                element: <PrivetRoute><About></About></PrivetRoute>,
             },
             {
                 path: "/details/:id",
-                element: <Details></Details>,
-                loader: () => fetch('estates.json')
+                element: <PrivetRoute><Details></Details></PrivetRoute>,
+                loader: ()=>fetch('/residential.json'),
             },
             {
                 path: "/update-profile",
-                element: <UpdateProfile></UpdateProfile>,
+                element: <PrivetRoute><UpdateProfile></UpdateProfile></PrivetRoute>,
             },
             {
                 path: "/user-profile",
-                element: <UserProfile></UserProfile>,
+                element: <PrivetRoute><UserProfile></UserProfile></PrivetRoute>,
             },
             {
                 path: "/sign-in",

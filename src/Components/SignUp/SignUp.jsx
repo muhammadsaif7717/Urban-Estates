@@ -26,6 +26,7 @@ const SignUp = () => {
             .then(result => {
                 const newUser = result.user
                 console.log(newUser)
+                e.target.reset();
                 return updateProfile(newUser, {
                     displayName: name,
                     photoURL: photo,
