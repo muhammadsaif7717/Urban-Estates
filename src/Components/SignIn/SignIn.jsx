@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import './SignIn.css'
 
 
 
@@ -19,7 +18,7 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const SignIn = () => {
-    const { signInUser, sighInWithGoogle, sighInWithGithub,setRelaod } = useContext(AuthContext);
+    const { signInUser, sighInWithGoogle, sighInWithGithub, setRelaod } = useContext(AuthContext);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
     const location = useLocation()
@@ -96,8 +95,14 @@ const SignIn = () => {
             </Helmet>
 
             <div className="mb-10">
-                <div className="hero min-h-screen bg-base-200 rounded-xl signin-container">
-                    <div className="card shrink-0 w-full max-w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
+                <div 
+                  style={{
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+                className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/BQPfgH25/jack-white-Ko-UAu-P5-KSjc-unsplash.jpg')]">
+                    <div className="card shrink-0 w-[330px] md:w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -138,7 +143,6 @@ const SignIn = () => {
                                 <span className="mx-3 text-gray-500">Or</span>
                                 <hr className="border-gray-300 w-1/4" />
                             </div>
-
                         </form>
 
                         <div className="flex flex-col gap-5 items-center mb-8">

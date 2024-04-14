@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
-import "./UpdateProfile.css"
 
 
 const UpdateProfile = () => {
@@ -41,8 +40,8 @@ const UpdateProfile = () => {
                                     <h1>{user.displayName}</h1>
                                 </div>
                                 <div className="flex flex-col">
-                                    <label><strong>Email:</strong></label>
-                                    <h1>{user.email}</h1>
+                                    <label><strong>Photo URL:</strong></label>
+                                    <h1>{user.photoURL}</h1>
                                 </div>
                             </div>
                         </form>
@@ -83,8 +82,14 @@ const UpdateProfile = () => {
 
 
             <div className="hidden md:block animate__animated animate__zoomIn">
-                <div className=" h-[80vh] container flex justify-center items-center rounded-2xl mb-10 border shadow-xl">
-                    <div className="bg-white w-full md:w-[600px] lg:w-[700px] p-10 bg-opacity-80 rounded-xl ">
+                <div
+                    style={{
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                    className=" h-[80vh]  flex justify-center items-center rounded-2xl mb-10 border shadow-xl bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')]">
+                    <div className="bg-white w-full md:w-[600px] lg:w-[700px] p-10 bg-opacity-90 rounded-xl ">
                         <h1 className="text-center text-3xl font-bold mb-8">Update Your Profile</h1>
                         <form className="space-y-4">
                             <tr>

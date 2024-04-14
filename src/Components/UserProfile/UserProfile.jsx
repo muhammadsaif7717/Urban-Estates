@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
-import './UserProfile.css'
+
 
 
 const UserProfile = () => {
     const { user } = useContext(AuthContext);
 
     return (
-        <div>
+        <div className="mb-10">
             <Helmet>
                 <title>Urban Estates | User Profile</title>
             </Helmet>
@@ -40,13 +40,19 @@ const UserProfile = () => {
 
 
             <div className="hidden md:block animate__animated animate__zoomIn">
-                <div className=" relative flex justify-center items-center rounded-xl">
-                    <div className="w-full h-[80vh] rounded-xl mb-10 container">
-                  
+                <div
+                    style={{
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                    className=" relative flex justify-center items-center rounded-xl bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')]">
+                    <div className="w-full h-[80vh] rounded-xl mb-10 ">
+
                     </div>
 
-                    <div className="bg-white  w-3/4 lg:w-2/4 p-10 bg-opacity-80 rounded-xl absolute shadow-xl">
-                        <h1 className="text-center text-3xl font-bold mb-8">User Profile</h1>
+                    <div className="bg-white  w-3/4 lg:w-2/4 p-10 bg-opacity-90 rounded-xl absolute shadow-xl">
+                        <h1 className="text-center text-3xl font-bold mb-8">Your Profile</h1>
                         <form className="space-y-4">
                             <div className="flex justify-center mb-5">
                                 <img src={user.photoURL} className="w-1/4 rounded-full" />

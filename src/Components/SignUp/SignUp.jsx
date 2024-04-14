@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import './SignUp.css'
+
 
 
 const SignUp = () => {
@@ -44,7 +44,7 @@ const SignUp = () => {
 
             })
             .then(() => {
-                toast.success('User created. Loging In!', { autoClose: 2000 });
+                toast.success('User created ! Redirecting to home page....', { autoClose: 2000 });
                 setTimeout(() => {
                     // Navigate after a delay of 1900ms (adjust the delay time as needed)
                     navigate(location?.state ? location.state : '/');
@@ -64,8 +64,15 @@ const SignUp = () => {
             </Helmet>
 
             <div className="mb-10">
-                <div className="hero min-h-screen bg-base-200 rounded-xl signup-container ">
-                    <div className="card shrink-0 w-full max-w-[400px]  shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
+
+                <div
+                    style={{
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                    className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/v89pgfcT/luke-miller-LZPt-GFF4sb-E-unsplash.jpg')]">
+                    <div className="card shrink-0 w-[330px] md:w-[400px]  shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -98,7 +105,7 @@ const SignUp = () => {
                                     placeholder="Photo URL here"
                                     name="photo"
                                     className="input input-bordered"
-                                     />
+                                />
                             </div>
                             <div className="form-control">
                                 <label className="label">
