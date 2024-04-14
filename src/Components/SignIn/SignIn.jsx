@@ -102,7 +102,7 @@ const SignIn = () => {
                     backgroundPosition: "center",
                 }}
                 className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/BQPfgH25/jack-white-Ko-UAu-P5-KSjc-unsplash.jpg')]">
-                    <div className="card shrink-0 w-[330px] md:w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
+                    <div className="card shrink-0 w-[320px] md:w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
