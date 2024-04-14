@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
@@ -8,6 +8,8 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 
 
@@ -16,8 +18,9 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const SignIn = () => {
-    const { signInUser, sighInWithGoogle, sighInWithGithub } = useContext(AuthContext);
+    const { signInUser, sighInWithGoogle, sighInWithGithub,setRelaod } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false)
     const location = useLocation()
     console.log('Locatoin In The Login Page', location)
 
@@ -33,9 +36,13 @@ const SignIn = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
-                e.target.reset();       
-                // navigate after login
-                navigate(location?.state ? location.state : '/')
+                e.target.reset();
+                setRelaod(true)
+                toast.success('Login successful!', { autoClose: 1800 });
+                setTimeout(() => {
+                    // Navigate after a delay of 1900ms (adjust the delay time as needed)
+                    navigate(location?.state ? location.state : '/');
+                }, 1900);
             })
             .catch(error => {
                 console.log(error.message)
@@ -48,8 +55,13 @@ const SignIn = () => {
         sighInWithGoogle(googleProvider)
             .then(result => {
                 console.log(result.user)
-                // navigate after login
-                navigate(location?.state ? location.state : '/')
+
+                toast.success('Login successful!', { autoClose: 1800 });
+                setTimeout(() => {
+                    // Navigate after a delay of 1900ms (adjust the delay time as needed)
+                    navigate(location?.state ? location.state : '/');
+                }, 1900);
+
             })
             .catch(error => {
                 console.log(error.message)
@@ -62,15 +74,19 @@ const SignIn = () => {
         sighInWithGithub(githubProvider)
             .then(result => {
                 console.log(result.user)
-                // navigate after login
-                navigate(location?.state ? location.state : '/')
+
+                toast.success('Login successful!', { autoClose: 1800 });
+                setTimeout(() => {
+                    // Navigate after a delay of 1900ms (adjust the delay time as needed)
+                    navigate(location?.state ? location.state : '/');
+                }, 1900);
             })
             .catch(error => {
                 console.log(error.message)
             })
 
     }
-   
+
 
     return (
         <>
@@ -96,10 +112,19 @@ const SignIn = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    placeholder="password" className="input input-bordered" required />
+                                <div className="relative flex items-center justify-end">
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        name="password"
+                                        placeholder="Password"
+                                        className="input input-bordered w-full"
+                                        required />
+                                    <div onClick={() => setShowPassword(!showPassword)} className="absolute mr-5">
+                                        {
+                                            showPassword ? <FaRegEye /> : <FaEyeSlash />
+                                        }
+                                    </div>
+                                </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

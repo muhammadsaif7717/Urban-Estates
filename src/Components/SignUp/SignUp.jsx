@@ -3,11 +3,19 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+import { FaRegEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 
 const SignUp = () => {
-    const { cerateUser } = useContext(AuthContext);
+    const { cerateUser, setRelaod } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState();
+    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false)
+
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -17,8 +25,9 @@ const SignUp = () => {
         const password = e.target.password.value;
         console.log(name, email, photo, password)
 
-        if(!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
+        if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
             setRegisterError("Password must contain at least one lowercase letter, one uppercase letter, and be at least 6 characters long.");
+            return;
         }
 
         //create user
@@ -31,11 +40,21 @@ const SignUp = () => {
                     displayName: name,
                     photoURL: photo,
                 });
+
+            })
+            .then(() => {
+                toast.success('Login successful!', { autoClose: 1800 });
+                setTimeout(() => {
+                    // Navigate after a delay of 1900ms (adjust the delay time as needed)
+                    navigate(location?.state ? location.state : '/');
+                }, 1900);
+            })
+            .then(() => {
+                setRelaod(true)
             })
             .catch(error => {
                 console.log(error.message)
             })
-
     }
     return (
         <>
@@ -84,12 +103,19 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    placeholder="Password"
-                                    className="input input-bordered"
-                                    required />
+                                <div className="relative flex items-center justify-end">
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        name="password"
+                                        placeholder="Password"
+                                        className="input input-bordered w-full"
+                                        required />
+                                    <div onClick={() => setShowPassword(!showPassword)} className="absolute mr-5">
+                                        {
+                                            showPassword ? <FaRegEye /> : <FaEyeSlash />
+                                        }
+                                    </div>
+                                </div>
                                 <label className="label mt-3">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -107,6 +133,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </>
     );
 };

@@ -4,8 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const NavBar = () => {
-    const { user, logOutUser } = useContext(AuthContext)
+    const { user, logOutUser, setRelaod } = useContext(AuthContext)
 
+    setRelaod(true)
+    
     const handleLogoutButton = () => {
         logOutUser()
             .then(() => {
