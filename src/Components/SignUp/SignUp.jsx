@@ -43,11 +43,11 @@ const SignUp = () => {
 
             })
             .then(() => {
-                toast.success('Login successful!', { autoClose: 1800 });
+                toast.success('User created. Loging In!', { autoClose: 2000 });
                 setTimeout(() => {
                     // Navigate after a delay of 1900ms (adjust the delay time as needed)
                     navigate(location?.state ? location.state : '/');
-                }, 1900);
+                }, 2100);
             })
             .then(() => {
                 setRelaod(true)
@@ -97,7 +97,7 @@ const SignUp = () => {
                                     placeholder="Photo URL here"
                                     name="photo"
                                     className="input input-bordered"
-                                    required />
+                                     />
                             </div>
                             <div className="form-control">
                                 <label className="label">
