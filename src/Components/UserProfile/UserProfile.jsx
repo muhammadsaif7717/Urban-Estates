@@ -12,7 +12,7 @@ const UserProfile = () => {
             <Helmet>
                 <title>Urban Estates | User Profile</title>
             </Helmet>
-            <div className="block md:hidden">
+            <div className="block md:hidden animate__animated animate__zoomIn">
                 <div className=" bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')] bg-center bg-no-repeat bg-cover brightness-90  flex justify-center items-center rounded-xl">
                     <div className="bg-white  w-full p-10 bg-opacity-70 rounded-xl">
                         <h1 className="text-center text-3xl font-bold mb-8">User Profile</h1>
@@ -39,7 +39,7 @@ const UserProfile = () => {
 
 
 
-            <div className="hidden md:block">
+            <div className="hidden md:block animate__animated animate__zoomIn">
                 <div className=" relative flex justify-center items-center rounded-xl">
                     <div className="w-full h-[80vh] rounded-xl mb-10 container">
                   

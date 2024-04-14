@@ -10,7 +10,7 @@ const About = () => {
             <Helmet>
                 <title>Urban Estates | About</title>
             </Helmet>
-            <div className="hero bg-gray-100 md:p-2 rounded-xl">
+            <div className="animate__animated animate__zoomIn hero bg-gray-100 md:p-2 rounded-xl">
                 <div className="hero-content text-center mt-12 mb-12">
                     <div className="">
                         <h1 className="text-3xl md:text-5xl font-bold">Hello People!</h1>

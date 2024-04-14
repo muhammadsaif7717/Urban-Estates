@@ -6,13 +6,13 @@ const Residential = () => {
     const resEstaes = useLoaderData();
     console.log(resEstaes);
     return (
-        <div className='text-center mt-10'>
+        <div className='text-center mt-10 animate__animated animate__zoomIn'>
             <h1 className="text-2xl font-bold text-center">Residential</h1>
             <p>Residential offerings encompass single-family homes, townhouses, apartments, student housing, senior communities, and vacation rentals for diverse living preferences etc.</p>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 '>
                 {
                     resEstaes.map(resEstae =>
-                        <div key={resEstae.id} className=' border p-5 rounded-xl space-y-2 text-start'>
+                        <div key={resEstae.id} className=' border p-5 rounded-xl space-y-2 text-start hover:scale-105 hover:shadow-xl'  data-aos="zoom-in">
                             <div>
                                 <img src={resEstae.image} className="rounded-xl" />
                             </div>

@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import './SignIn.css'
 
 
 
@@ -94,9 +95,9 @@ const SignIn = () => {
                 <title>Urban Estates | Sign In</title>
             </Helmet>
 
-            <div className="my-10">
-                <div className="hero min-h-screen bg-base-200">
-                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="mb-10">
+                <div className="hero min-h-screen bg-base-200 rounded-xl signin-container">
+                    <div className="card shrink-0 w-full max-w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">

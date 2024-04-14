@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <>
-            <footer className="footer py-10 text-neutral-content bg-black">
+            <footer className="footer py-10 text-neutral-content bg-black animate__animated animate__fadeInUp">
                 <div className="footer w-[95%] md:w-[85%] lg:w-[80%] mx-auto  flex justify-between">
                 <nav>
                     <h6 className="footer-title text-lg">Services</h6>

@@ -9,16 +9,16 @@ const Details = () => {
     const selectedResEstate = resEstates.find(resEstate => resEstate.id === parseInt(id))
     console.log(selectedResEstate)
     return (
-    <div className='flex justify-center items-center lg:h-[80vh]'>
+    <div className='flex justify-center items-center lg:h-[80vh] animate__animated animate__zoomIn'>
             <div className='flex flex-col lg:flex-row items-center md:items-start lg:items-center mb-10'>
             <Helmet>
                 <title>Urban Estates | Details - {id}</title>
             </Helmet>
-            <div className='flex-1'>
+            <div className='flex-1 animate__animated animate__fadeInLeft'>
                 <img src={selectedResEstate.image} className=" h-auto w-full rounded-xl" />
             </div>
 
-            <div className='flex-1'>
+            <div className='flex-1 animate__animated animate__fadeInRight'>
                 <div className=' p-5 space-y-2 text-start'>
                     <div>
                         <h1 className='font-bold text-[30px]'>{selectedResEstate.estate_title}</h1>

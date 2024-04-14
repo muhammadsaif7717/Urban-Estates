@@ -30,7 +30,7 @@ const UpdateProfile = () => {
                 <title>Urban Estates | Update Profile</title>
             </Helmet>
 
-            <div className="block md:hidden">
+            <div className="block md:hidden animate__animated animate__zoomIn">
                 <div className=" bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')] bg-center bg-no-repeat bg-cover brightness-90  flex justify-center items-center rounded-xl">
                     <div className="bg-white w-full p-5 bg-opacity-80 rounded-xl ">
                         <h1 className="text-center text-2xl font-bold mb-8">Update Your Profile</h1>
@@ -82,7 +82,7 @@ const UpdateProfile = () => {
 
 
 
-            <div className="hidden md:block">
+            <div className="hidden md:block animate__animated animate__zoomIn">
                 <div className=" h-[80vh] container flex justify-center items-center rounded-2xl mb-10 border shadow-xl">
                     <div className="bg-white w-full md:w-[600px] lg:w-[700px] p-10 bg-opacity-80 rounded-xl ">
                         <h1 className="text-center text-3xl font-bold mb-8">Update Your Profile</h1>
