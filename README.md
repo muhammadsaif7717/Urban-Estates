@@ -16,12 +16,4 @@
 <p><strong>🔸swipe slider</strong></p>
 <p><strong>🔸animate.css</strong></p>
 <p><strong>🔸aos</strong></p>
-<p><strong>🔸firebase</strong></p>
-<p><strong>🔸prop-types</strong></p>
-<p><strong>🔸react-helmet-async</strong></p>
-<p><strong>🔸react-icons</strong></p>
-<p><strong>🔸react-router-dom</strong></p>
-<p><strong>🔸react-toastify</strong></p>
-<p><strong>🔸sort-by</strong></p>
-<p><strong>🔸ocalforage</strong></p>
-<p><strong>🔸match-sorter</strong></p>
+

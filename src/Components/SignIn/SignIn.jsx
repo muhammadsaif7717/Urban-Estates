@@ -102,7 +102,7 @@ const SignIn = () => {
                     backgroundPosition: "center",
                 }}
                 className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/BQPfgH25/jack-white-Ko-UAu-P5-KSjc-unsplash.jpg')]">
-                    <div className="card shrink-0 w-[320px] md:w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
+                    <div className="card shrink-0 w-[320px] md:w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -136,7 +136,7 @@ const SignIn = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary bg-[#F97316] border-none text-white">Login</button>
                             </div>
                             <div className="flex justify-center items-center mt-5">
                                 <hr className="border-gray-300 w-1/4" />
@@ -146,11 +146,11 @@ const SignIn = () => {
                         </form>
 
                         <div className="flex flex-col gap-5 items-center mb-8">
-                            <div onClick={handleGoogleSignInButton} className="flex items-center justify-center gap-3 border-2 border-blue-500 p-3 rounded-xl w-3/4">
+                            <div onClick={handleGoogleSignInButton} className="flex items-center justify-center gap-3 border-2 border-blue-500 p-3 rounded-xl w-3/4 hover:bg-blue-100">
                                 <FaGoogle className="text-3xl text-blue-500" />
                                 <button className=" bg-transparent text-blue-500">Login With Google</button>
                             </div>
-                            <div onClick={handleGithubSignInButton} className="flex items-center justify-center gap-3 border-2 border-gray-500 p-3 rounded-xl w-3/4">
+                            <div onClick={handleGithubSignInButton} className="flex items-center justify-center gap-3 border-2 border-gray-500 p-3 rounded-xl w-3/4 hover:bg-gray-200">
                                 <FaGithub className="text-3xl" />
                                 <button className=" bg-transparent text-black">Login With Github</button>
                             </div>

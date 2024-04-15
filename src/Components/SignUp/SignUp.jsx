@@ -13,6 +13,7 @@ import { FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
     const { cerateUser, setRelaod } = useContext(AuthContext);
+    const  [success,setSuccess]=useState('');
     const [registerError, setRegisterError] = useState();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false)
@@ -26,22 +27,33 @@ const SignUp = () => {
         const password = e.target.password.value;
         console.log(name, email, photo, password)
 
-        if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
-            setRegisterError("Password must contain at least one lowercase letter, one uppercase letter, and be at least 6 characters long.");
+        if (password.length < 6) {
+            setRegisterError("Password must be at least 6 characters long.");
             return;
         }
+        
+        if (!/[a-z]/.test(password)) {
+            setRegisterError("Password must contain at least one lowercase letter.");
+            return;
+        }
+        
+        if (!/[A-Z]/.test(password)) {
+            setRegisterError("Password must contain at least one uppercase letter.");
+            return;
+        }
+        
 
         //create user
         cerateUser(email, password)
             .then(result => {
                 const newUser = result.user
                 console.log(newUser)
+                setSuccess('Use Created Successfully')
                 e.target.reset();
                 return updateProfile(newUser, {
                     displayName: name,
                     photoURL: photo,
                 });
-
             })
             .then(() => {
                 toast.success('User created ! Redirecting to home page....', { autoClose: 2000 });
@@ -72,7 +84,7 @@ const SignUp = () => {
                         backgroundPosition: "center",
                     }}
                     className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/v89pgfcT/luke-miller-LZPt-GFF4sb-E-unsplash.jpg')]">
-                    <div className="card shrink-0 w-[320px] md:w-[400px]  shadow-2xl bg-base-100 animate__animated animate__pulse opacity-90">
+                    <div className="card shrink-0 w-[320px] md:w-[400px]  shadow-2xl bg-base-100 animate__animated animate__pulse">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -129,12 +141,15 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-primary bg-[#F97316] border-none text-white">Register</button>
                             </div>
                         </form>
                         <div className="text-center mb-7">
                             {
-                                registerError && <p className="text-red-500 text-sm p-5">{registerError}</p>
+                                registerError && <p className="text-red-500 text-sm px-5 mb-2">{registerError}</p>
+                            }
+                            {
+                                success && <p className="text-green-600 text-sm px-5 mb-2">{success}</p>
                             }
                             <p>Already have an account? Please <Link to='/sign-in' className="text-blue-500">Login</Link></p>
                         </div>
