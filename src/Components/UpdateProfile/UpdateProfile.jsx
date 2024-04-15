@@ -41,7 +41,7 @@ const UpdateProfile = () => {
                                 </div>
                                 <div className="flex flex-col">
                                     <label><strong>Photo URL:</strong></label>
-                                    <h1>{user.photoURL}</h1>
+                                    <h1>{user.photoURL.slice(0,43)} ...</h1>
                                 </div>
                             </div>
                         </form>
@@ -102,7 +102,7 @@ const UpdateProfile = () => {
                             </tr>
                             <tr>
                                 <td><h1 className="text-lg"><strong>Photo URL:</strong> &nbsp;</h1> </td>
-                                <td>{user.photoURL}</td>
+                                <td>{user.photoURL.slice(0,43)} ...</td>
                             </tr>
                         </form>
                         <br /> <br />

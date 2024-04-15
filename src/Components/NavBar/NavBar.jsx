@@ -55,11 +55,11 @@ const NavBar = () => {
 
 
                 <div className="flex md:hidden ">
-                        <nav className=" text-[16px] md:text-[14px]  lg:text-lg w-ful">
-                            <NavLink className="px-2 lg:px-4" to="/">Home</NavLink>
-                            <NavLink className="px-2 lg:px-4" to="/about">About</NavLink>
-                            <NavLink className="px-2 lg:px-4" to="/update-profile">Update Profile</NavLink>
-                            <NavLink className="px-2 lg:px-4" to="/user-profile">User Profile</NavLink>
+                        <nav className=" text-[14px] md:text-[14px]  lg:text-lg w-ful">
+                            <NavLink className="px-1 lg:px-4" to="/">Home</NavLink>
+                            <NavLink className="px-1 lg:px-4" to="/about">About</NavLink>
+                            <NavLink className="px-1 lg:px-4" to="/update-profile">Update Profile</NavLink>
+                            <NavLink className="px-1 lg:px-4" to="/user-profile">User Profile</NavLink>
 
                         </nav>
                     </div>
@@ -68,11 +68,11 @@ const NavBar = () => {
 
                 <div className="flex justify-between items-center">
                     <div className="hidden md:flex">
-                        <nav className=" text-[16px] md:text-[14px]  lg:text-lg w-ful">
-                            <NavLink className="px-2 lg:px-4" to="/">Home</NavLink>
-                            <NavLink className="px-2 lg:px-4" to="/about">About</NavLink>
-                            <NavLink className="px-2 lg:px-4" to="/update-profile">Update Profile</NavLink>
-                            <NavLink className="px-2 lg:px-4" to="/user-profile">User Profile</NavLink>
+                        <nav className=" text-[14px] md:text-[14px]  lg:text-lg w-ful">
+                            <NavLink className="px-1 md:px-2 lg:px-4" to="/">Home</NavLink>
+                            <NavLink className="px-1 md:px-2 lg:px-4" to="/about">About</NavLink>
+                            <NavLink className="px-1 md:px-2 lg:px-4" to="/update-profile">Update Profile</NavLink>
+                            <NavLink className="px-1 md:px-2 lg:px-4" to="/user-profile">User Profile</NavLink>
 
                         </nav>
                     </div>
