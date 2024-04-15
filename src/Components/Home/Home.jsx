@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Slider from "../Slider/Slider";
 import { Outlet } from 'react-router-dom'
 import CategotiesBar from "../CategoriesBar/CategotiesBar";
-import 'animate.css';
+
 
 
 

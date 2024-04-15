@@ -7,7 +7,7 @@ const NavBar = () => {
     const { user, logOutUser, setRelaod } = useContext(AuthContext)
 
     setRelaod(true)
-    
+
     const handleLogoutButton = () => {
         logOutUser()
             .then(() => {
@@ -20,55 +20,88 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="animate__animated animate__fadeInDown navbar bg-base-100 p-0 ">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden pl-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            <div className="animate__animated animate__fadeInDown flex flex-col md:flex-row items-center justify-between bg-base-100 p-0 space-y-2">
+                <div className="flex justify-between w-full md:w-auto">
+                    <div className="">
+
+                        <Link to="/" className="btn btn-ghost text-2xl font-bold p-0">Urban Estates</Link>
+                    </div>
+                    <div className="flex md:hidden gap-1 md:gap-2  lg:gap-5 items-center">
+                        <div>
+                            {
+                                user ?
+                                    <div role="button" className="btn btn-ghost btn-circle avatar" title={user.displayName}>
+                                        <div className="w-10 rounded-full">
+                                            <img alt="Profile Picture" src={user.photoURL
+                                            } />
+                                        </div>
+                                    </div>
+                                    :
+                                    ''
+                            }
                         </div>
-                        <nav tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2  bg-base-100 rounded-box w-52 text-lg  shadow-2xl border-2 z-50">
-                            <NavLink className="px-5" to="/">Home</NavLink>
-                            <NavLink className="px-5" to="/about">About</NavLink>
-                            <NavLink className="px-5" to="/update-profile">Update Profile</NavLink>
-                            <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
+
+                        <div>
+                            {
+                                user ?
+                                    <button onClick={handleLogoutButton} className="btn btn-primary border-none bg-orange-500 text-white">Logout</button>
+                                    :
+                                    <Link to='/sign-in' className="btn btn-primary border-none bg-orange-500 text-white">Login</Link>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div className="flex md:hidden ">
+                        <nav className=" text-[16px] md:text-[14px]  lg:text-lg w-ful">
+                            <NavLink className="px-2 lg:px-4" to="/">Home</NavLink>
+                            <NavLink className="px-2 lg:px-4" to="/about">About</NavLink>
+                            <NavLink className="px-2 lg:px-4" to="/update-profile">Update Profile</NavLink>
+                            <NavLink className="px-2 lg:px-4" to="/user-profile">User Profile</NavLink>
+
                         </nav>
                     </div>
-                    <Link to="/" className="btn btn-ghost text-2xl font-bold p-0">Urban Estates</Link>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <nav className="menu menu-horizontal px-1 text-lg">
-                        <NavLink className="px-5" to="/">Home</NavLink>
-                        <NavLink className="px-5" to="/about">About</NavLink>
 
-                        <NavLink className="px-5" to="/update-profile">Update Profile</NavLink>
-                        <NavLink className="px-5" to="/user-profile">User Profile</NavLink>
 
-                    </nav>
-                </div>
-                <div className="navbar-end flex gap-1 md:gap-5 items-center">
-                    <div>
-                        {
-                            user ?
-                                <div role="button" className="btn btn-ghost btn-circle avatar" title={user.displayName}>
-                                    <div className="w-10 rounded-full">
-                                        <img alt="Profile Picture" src={user.photoURL
-                                        } />
+
+                <div className="flex justify-between items-center">
+                    <div className="hidden md:flex">
+                        <nav className=" text-[16px] md:text-[14px]  lg:text-lg w-ful">
+                            <NavLink className="px-2 lg:px-4" to="/">Home</NavLink>
+                            <NavLink className="px-2 lg:px-4" to="/about">About</NavLink>
+                            <NavLink className="px-2 lg:px-4" to="/update-profile">Update Profile</NavLink>
+                            <NavLink className="px-2 lg:px-4" to="/user-profile">User Profile</NavLink>
+
+                        </nav>
+                    </div>
+                    <div className="hidden md:flex gap-1 md:gap-2  lg:gap-4 items-center">
+                        <div>
+                            {
+                                user ?
+                                    <div role="button" className="btn btn-ghost btn-circle avatar" title={user.displayName}>
+                                        <div className="w-10 rounded-full">
+                                            <img alt="Profile Picture" src={user.photoURL
+                                            } />
+                                        </div>
                                     </div>
-                                </div>
-                                :
-                                ''
-                        }
-                    </div>
+                                    :
+                                    ''
+                            }
+                        </div>
 
-                    <div>
-                        {
-                            user ?
-                                <button onClick={handleLogoutButton} className="btn btn-primary border-none bg-orange-500 text-white">Logout</button>
-                                :
-                                <Link to='/sign-in' className="btn btn-primary border-none bg-orange-500 text-white">Login</Link>
-                        }
+                        <div>
+                            {
+                                user ?
+                                    <button onClick={handleLogoutButton} className="btn btn-primary border-none bg-orange-500 text-white">Logout</button>
+                                    :
+                                    <Link to='/sign-in' className="btn btn-primary border-none bg-orange-500 text-white">Login</Link>
+                            }
+                        </div>
                     </div>
                 </div>
+
             </div>
         </>
     );
