@@ -43,6 +43,7 @@ const UpdateProfile = () => {
                 <div className=" bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')] bg-center bg-no-repeat bg-cover brightness-90  flex justify-center items-center rounded-xl">
                     <div className="bg-white w-full p-5 bg-opacity-80 rounded-xl ">
                         <h1 className="text-center text-2xl font-bold mb-8">Update Your Profile</h1>
+                           < hr className="border-dashed border-gray-400 my-5" />
                         <form className="space-y-4">
                             <div className="block md:hidden space-y-2">
                                 <div className="flex flex-col">
@@ -105,6 +106,7 @@ const UpdateProfile = () => {
                     className=" h-[80vh]  flex justify-center items-center rounded-2xl mb-10 border shadow-xl bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')]">
                     <div className="bg-white w-full md:w-[600px] lg:w-[700px] p-10 bg-opacity-90 rounded-xl ">
                         <h1 className="text-center text-3xl font-bold mb-8">Update Your Profile</h1>
+                        < hr className="border-dashed border-gray-400 my-5" />
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <div><h1 className="text-lg"><strong>Name:</strong> &nbsp;</h1> </div>
