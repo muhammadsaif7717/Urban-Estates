@@ -1,28 +1,38 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const UpdateProfile = () => {
     const { user, updateUserProfile, setRelaod } = useContext(AuthContext)
     console.log(user)
 
-    const handleFormSubmit = (e) => {
+    useEffect(() => {
+        setRelaod(true);
+    }, [setRelaod]);
+
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
-
         console.log(name, photo)
 
-        //update parofile
-        updateUserProfile(name, photo)
-            .then(() => {
-                setRelaod(true)
-                e.target.reset();
-            })
 
 
+        try {
+            // Update profile
+            await updateUserProfile(name, photo);
+            e.target.reset(); // Clear form inputs
+            toast.success("Profile updated successfully! Please reload the site.");
+        }
+        catch (error) {
+            toast.error("Error updating profile");
+        }
     }
+
+
     return (
         <div>
             <Helmet>
@@ -40,12 +50,16 @@ const UpdateProfile = () => {
                                     <h1>{user.displayName}</h1>
                                 </div>
                                 <div className="flex flex-col">
+                                    <label><strong>Email:</strong></label>
+                                    <h1>{user.email}</h1>
+                                </div>
+                                <div className="flex flex-col">
                                     <label><strong>Photo URL:</strong></label>
-                                    <h1>{user.photoURL.slice(0,43)} ...</h1>
+                                    <h1>{user.photoURL.slice(0, 43)} ...</h1>
                                 </div>
                             </div>
                         </form>
-
+                        < hr className="border-dashed border-gray-400 my-5" />
                         <form onSubmit={handleFormSubmit} className="">
                             <div className="form-control">
                                 <label className="label">
@@ -91,21 +105,23 @@ const UpdateProfile = () => {
                     className=" h-[80vh]  flex justify-center items-center rounded-2xl mb-10 border shadow-xl bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')]">
                     <div className="bg-white w-full md:w-[600px] lg:w-[700px] p-10 bg-opacity-90 rounded-xl ">
                         <h1 className="text-center text-3xl font-bold mb-8">Update Your Profile</h1>
-                        <form className="space-y-4">
-                            <tr>
-                                <td><h1 className="text-lg"><strong>Name:</strong> &nbsp;</h1> </td>
-                                <td>{user.displayName}</td>
-                            </tr>
-                            <tr>
-                                <td><h1 className="text-lg"><strong>Email:</strong> &nbsp;</h1> </td>
-                                <td>{user.email}</td>
-                            </tr>
-                            <tr>
-                                <td><h1 className="text-lg"><strong>Photo URL:</strong> &nbsp;</h1> </td>
-                                <td>{user.photoURL.slice(0,43)} ...</td>
-                            </tr>
-                        </form>
-                        <br /> <br />
+                        <div className="space-y-4">
+                            <div className="flex items-center">
+                                <div><h1 className="text-lg"><strong>Name:</strong> &nbsp;</h1> </div>
+                                <div>{user.displayName}</div>
+                            </div>
+
+                            <div className="flex  items-center">
+                                <div><h1 className="text-lg"><strong>Email:</strong> &nbsp;</h1> </div>
+                                <div>{user.email}</div>
+                            </div>
+
+                            <div className="flex items-center">
+                                <div><h1 className="text-lg"><strong>Photo URL:</strong> &nbsp;</h1> </div>
+                                <div>{user.photoURL.slice(0, 43)} ...</div>
+                            </div>
+                        </div>
+                        < hr className="border-dashed border-gray-400 my-5" />
                         <form onSubmit={handleFormSubmit} className="">
                             <div className="form-control">
                                 <label className="label">
@@ -137,7 +153,7 @@ const UpdateProfile = () => {
                 </div>
             </div>
 
-
+            <ToastContainer></ToastContainer>
 
         </div>
     );

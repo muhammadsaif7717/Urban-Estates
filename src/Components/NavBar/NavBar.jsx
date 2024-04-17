@@ -1,12 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const NavBar = () => {
     const { user, logOutUser, setRelaod } = useContext(AuthContext)
 
-    setRelaod(true)
+    useEffect(() => {
+        setRelaod(true);
+    }, [setRelaod]); 
 
     const handleLogoutButton = () => {
         logOutUser()
@@ -22,7 +24,7 @@ const NavBar = () => {
         <>
             <div className="animate__animated animate__fadeInDown flex flex-col md:flex-row items-center justify-between bg-base-100 p-0 space-y-2">
                 <div className="flex justify-between w-full md:w-auto">
-                    <div className="">
+                    <div>
 
                         <Link to="/" className="btn btn-ghost text-2xl font-bold p-0">Urban Estates</Link>
                     </div>

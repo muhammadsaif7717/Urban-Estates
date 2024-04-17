@@ -55,7 +55,6 @@ const SignIn = () => {
         sighInWithGoogle(googleProvider)
             .then(result => {
                 console.log(result.user)
-
                 toast.success('Login successful!', { autoClose: 1800 });
                 setTimeout(() => {
                     // Navigate after a delay of 1900ms (adjust the delay time as needed)
@@ -95,13 +94,13 @@ const SignIn = () => {
             </Helmet>
 
             <div className="mb-10">
-                <div 
-                  style={{
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-                className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/BQPfgH25/jack-white-Ko-UAu-P5-KSjc-unsplash.jpg')]">
+                <div
+                    style={{
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                    className="hero min-h-screen bg-base-200 rounded-xl bg-[url('https://i.postimg.cc/BQPfgH25/jack-white-Ko-UAu-P5-KSjc-unsplash.jpg')]">
                     <div className="card shrink-0 w-[320px] md:w-[400px] shadow-2xl bg-base-100 animate__animated animate__pulse">
                         <form onSubmit={handleFormSubmit} className="card-body">
                             <div className="form-control">

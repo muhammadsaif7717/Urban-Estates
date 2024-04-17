@@ -16,6 +16,7 @@ const UserProfile = () => {
                 <div className=" bg-[url('https://i.postimg.cc/6qXDtgD0/lotus-design-n-print-Alp8v3dp-Gh0-unsplash.jpg')] bg-center bg-no-repeat bg-cover brightness-90  flex justify-center items-center rounded-xl">
                     <div className="bg-white  w-full p-10 bg-opacity-70 rounded-xl">
                         <h1 className="text-center text-3xl font-bold mb-8">User Profile</h1>
+                        < hr className="border-dashed border-gray-400 my-5" />
                         <form className="space-y-4">
                             <div className="flex justify-center mb-5">
                                 <img src={user.photoURL} className="w-1/4 rounded-full" />
@@ -53,22 +54,24 @@ const UserProfile = () => {
 
                     <div className="bg-white  w-3/4 lg:w-2/4 p-10 bg-opacity-90 rounded-xl absolute shadow-xl">
                         <h1 className="text-center text-3xl font-bold mb-8">Your Profile</h1>
-                        <form className="space-y-4">
+                        < hr className="border-dashed border-gray-400 my-5" />
+                        <div className="space-y-4">
                             <div className="flex justify-center mb-5">
                                 <img src={user.photoURL} className="w-1/4 rounded-full" />
                             </div>
 
                             <div className="hidden md:block">
-                                <tr>
-                                    <td><h1 className="text-lg"><strong>Name:</strong> &nbsp;</h1> </td>
-                                    <td>{user.displayName}</td>
-                                </tr>
-                                <tr>
-                                    <td><h1 className="text-lg"><strong>Email:</strong> &nbsp;</h1> </td>
-                                    <td>{user.email}</td>
-                                </tr>
+                                <div className="flex  items-center">
+                                    <div><h1 className="text-lg"><strong>Name:</strong> &nbsp;</h1> </div>
+                                    <div>{user.displayName}</div>
+                                </div>
+                                <div className="flex  items-center">
+                                    <div><h1 className="text-lg"><strong>Email:</strong> &nbsp;</h1> </div>
+                                    <div>{user.email}</div>
+                                </div>
+
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
