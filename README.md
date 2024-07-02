@@ -36,8 +36,20 @@
     </li>
     <li><strong>Install Dependencies:</strong>
       <pre><code>npm install</code></pre>
+       <a href='https://github.com/muhammadsaif7717/Urban-Estates/blob/main/package.json' target='_blank'>View all dependencies</a>
     </li>
-    <li><strong>Start the Development Server:</strong>
+    <li><strong>Configure Environment Variables:</strong>
+      <p>Create a <code>.env</code> file in the root directory with the following variables:</p>
+      <pre><code>
+    VITE_APIKEY
+    VITE_AUTHDOMAIN
+    VITE_PROJECTID
+    VITE_STORAGEBUCKET
+    VITE_MESSAGINGSENDERID
+    VITE_APPID
+      </code></pre>
+    </li>
+    <li><strong>Start the Server:</strong>
       <pre><code>npm run dev</code></pre>
     </li>
     <li><strong>Open Your Browser:</strong> Go to <a href="http://localhost:5173">http://localhost:5173</a> to view the project.</li>
