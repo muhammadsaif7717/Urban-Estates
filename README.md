@@ -32,7 +32,7 @@
       <pre><code>git clone https://github.com/muhammadsaif7717/Urban-Estates.git</code></pre>
     </li>
     <li><strong>Navigate to the Project Directory:</strong>
-      <pre><code>cd urban-estates</code></pre>
+      <pre><code>cd Urban-Estates</code></pre>
     </li>
     <li><strong>Install Dependencies:</strong>
       <pre><code>npm install</code></pre>
